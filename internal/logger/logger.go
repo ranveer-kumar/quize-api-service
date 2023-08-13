@@ -18,10 +18,7 @@ func InitLogger() {
 	}
 
 	log.Logger = log.Output(consoleWriter).Level(zerolog.InfoLevel).With().CallerWithSkipFrameCount(3).Str("service", "quize-api-service").Logger()
-	// zerolog.LevelFieldName = "LEVEL"
-	// zerolog.LevelFieldMarshalFunc = func(l zerolog.Level) string {
-	// 	return l.String()
-	// }
+
 }
 
 func Info(msg string) {

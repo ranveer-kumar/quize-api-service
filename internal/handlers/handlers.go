@@ -31,16 +31,6 @@ func GetQuizeHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// // Convert the createdAt timestamp to IST
-	// createdAtIST, err := convertToIST(quize.CreatedAt)
-	// if err != nil {
-	// 	log.Printf("Error converting createdAt to IST: %v", err)
-	// 	http.Error(w, "Error fetching quize", http.StatusInternalServerError)
-	// 	return
-	// }
-
-	// quize.CreatedAt = createdAtIST
-
 	// Convert the time fields to IST
 	quize.ConvertTimeToIST()
 
