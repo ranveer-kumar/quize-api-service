@@ -18,6 +18,10 @@ func InitLogger() {
 	}
 
 	log.Logger = log.Output(consoleWriter).Level(zerolog.InfoLevel).With().CallerWithSkipFrameCount(3).Str("service", "quize-api-service").Logger()
+	// log.Logger = log.Level(zerolog.InfoLevel).With().CallerWithSkipFrameCount(3).Str("service", "quize-api-service").Logger()
+	// sublogger := log.With().
+	//              Str("component", "foo").
+	//              Logger()
 
 }
 

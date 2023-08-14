@@ -5,7 +5,6 @@ import (
 	// "log"
 	"net/http"
 	"quize-api-service/internal/db"
-	"quize-api-service/internal/logger"
 	log "quize-api-service/internal/logger"
 	"quize-api-service/internal/models"
 	"strconv"
@@ -21,7 +20,7 @@ func GetQuizeHandler(w http.ResponseWriter, r *http.Request) {
 	quize, err := db.GetQuizeByID(id)
 	if err != nil {
 		// logger.Printf("Error fetching quize: %v", err)
-		logger.Error("Error fetching quize: ", err)
+		log.Error("Error fetching quize: ", err)
 		http.Error(w, "Error fetching quize", http.StatusInternalServerError)
 		return
 	}
